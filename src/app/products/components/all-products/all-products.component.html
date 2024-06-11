@@ -1,0 +1,32 @@
+<!-- <app-header [inputValue]="selectedCategory"></app-header> -->
+
+<div class="category-selected">
+	{{ selectedCategory }}
+</div>
+
+<div class="products">
+	<div class="container">
+		<div class="categories">
+			<app-select [title]="'Categories:'" [data]="categories" (selectedValue)="filterCategory($event)"></app-select>
+		</div>
+		<div class="products-list d-flex flex-wrap" *ngIf="!loading">
+			<div class="card product" *ngFor="let product of products">
+				<app-product [data]="product" (addToCart)="addToCart($event)" (removeFromCart)="removeFromCart($event)" (successMsg)="sent"></app-product>
+			</div>
+		</div>
+	
+		<div class="total-price d-flex align-items-center justify-content-between">
+			<div class="total">
+				Total Price: 
+				<span>
+					{{ total | number:'1.0-0' }} L.E
+				</span>
+			</div>
+			<button class="btn btn-info" (click)="openDialog()">Check Out !</button>
+		</div>
+		
+		<div class="text-center w-100" *ngIf="loading">
+			<app-loader></app-loader>
+		</div>
+	</div>
+</div>

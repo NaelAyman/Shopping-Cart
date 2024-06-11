@@ -1,0 +1,31 @@
+.product-details {
+  padding: 40px 0;
+  .img {
+    width: 50%;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+      width: 50%;
+    }
+  }
+  .details {
+    .info {
+      li {
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 15px;
+        font-family: cursive;
+        span {
+          font-weight: normal;
+          font-family: tahoma;
+        }
+        .title {
+          margin: 0 0 20px;
+          color: #00bcd4;
+        }
+      }
+    }
+  }
+}

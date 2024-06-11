@@ -1,0 +1,57 @@
+<div class="shopping-cart">
+  <div class="cart-header d-flex align-items-center justify-content-center">
+    <div class="head-title">
+      <h2 class="title">Reciept</h2>
+    </div>
+  </div>
+  <div class="cart-body" *ngIf="cartProducts.length > 0; else noData">
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of cartProducts; let i = index">
+            <td>
+              <img src="{{ product.item.image }}" alt="" />
+            </td>
+            <td>{{ product.item.title }}</td>
+            <td>{{ product.item.price }} L.E</td>
+            <td>
+              <div class="quantity d-flex align-items-center">
+                <input
+                  type="number"
+                  class="form-control text-center"
+                  [(ngModel)]="product.quantity"
+                  disabled="disabled"
+                />
+              </div>
+            </td>
+            <td>{{ product.item.price * product.quantity }} l.E</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="cart-footer d-flex align-items-center justify-content-between" *ngIf="cartProducts.length > 0">
+    <div class="total">
+      Total:
+      <span>{{ total | number:'1.0-0' }} L.E</span>
+    </div>
+    <button class="btn btn-info" (click)="addCart()">Order Now</button>
+  </div>
+
+  <ng-template #noData>
+    <div class="img text-center">
+      <img src="assets/images/not-found.webp" alt="" />
+      <p class="m-0">No Items was Added</p>
+    </div>
+  </ng-template>
+</div>
+

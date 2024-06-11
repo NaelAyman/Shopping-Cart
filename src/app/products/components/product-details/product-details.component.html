@@ -1,0 +1,46 @@
+<div class="product-details d-flex" *ngIf="!loading">
+  <div class="img">
+    <img src="{{ data.image }}" alt="">
+  </div>
+  <div class="details">
+    <ul class="info">
+      <li>
+        <h2 class="title">{{ data.title }}</h2>
+      </li>
+      <li>
+        Category: 
+        <span>
+          {{ data.category }}
+        </span>
+      </li>
+      <li>
+        Description: 
+        <span>
+          {{ data.description }}
+        </span>
+      </li>
+      <li>
+        Rate: 
+        <span>
+          {{ data.rating.rate }}
+        </span>
+      </li>
+      <li>
+        Count: 
+        <span>
+          {{ data.rating.count }}
+        </span>
+      </li>
+      <li>
+        Price: 
+        <span>
+          {{ data.price }}
+        </span>
+      </li>
+    </ul>
+  </div>
+</div>	
+
+<div class="text-center w-100" style="padding: 40px 0;" *ngIf="loading">
+  <app-loader></app-loader>
+</div>
