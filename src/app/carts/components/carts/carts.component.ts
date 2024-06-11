@@ -50,6 +50,10 @@ export class CartsComponent implements OnInit {
     if(this.success == true) {
       this.total = 0;
       localStorage.removeItem('Cart');
+
+      setTimeout(() => {
+        window.location.reload();
+      }, 1000)
     }
   }
 

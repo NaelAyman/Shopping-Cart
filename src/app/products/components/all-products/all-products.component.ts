@@ -109,7 +109,7 @@ export class AllProductsComponent {
       let existItem = this.cartProducts.find(item => item.item.id == event.item.id);
       
       if(existItem) {
-        // alert('This Item Already Existed');
+        alert('This Item Already Existed'); 
         this.removeCartBtn = true;
         this.addCartBtn = false;
       } else {

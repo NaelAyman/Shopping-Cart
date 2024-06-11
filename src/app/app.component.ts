@@ -13,19 +13,6 @@ export class AppComponent {
 
   constructor(private _SharedService: SharedService) {}
   ngOnInit() {
-    // // using getIsAdmin normal observable
-    // this._SharedService.getIsAdmin().subscribe({
-    //   next: (res:any) => {
-    //     this.IsAdminUser = res.isAdmin
-    //     this._SharedService.updateIsAdmin(res.isAdmin)
-    //   },
-    // });
-    // // using isAdmin$ as BehaviorSubject.asObservable()
-    // this._SharedService.isAdmin$.subscribe({
-    //   next: (res:any) => {
-    //     this.IsAdminUser = res.isAdmin
-    //   },
-    // });
   }
 
 }
